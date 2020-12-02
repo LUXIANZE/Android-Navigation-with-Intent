@@ -6,4 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".RelativeLayout">
 
+    <RelativeLayout
+        android:backgroundTint="#f5e6ef"
+        android:id="@+id/parentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:padding="10dp"
+            android:id="@+id/title"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:text="This is a Relative Layout Page."
+            android:background="@drawable/text_backgroud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:padding="10dp"
+            android:id="@+id/textView1"
+            android:layout_below="@id/title"
+            android:text="Text View #1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:padding="10dp"
+            android:id="@+id/textView2"
+            android:layout_below="@id/title"
+            android:layout_toRightOf="@id/textView1"
+            android:text="Text View #2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:padding="10dp"
+            android:id="@+id/textView3"
+            android:layout_below="@id/textView1"
+            android:layout_alignParentRight="true"
+            android:text="Text View #3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_marginTop="200dp"
+            android:layout_below="@id/textView3"
+            android:id="@+id/inputContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="10dp"
+                android:id="@+id/inputTitle"
+                android:text="Enter your name:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_below="@id/inputContainer"
+            android:onClick="backToHomeBtnClicked"
+            android:id="@+id/backToHomeBtn"
+            android:text="Back To Home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

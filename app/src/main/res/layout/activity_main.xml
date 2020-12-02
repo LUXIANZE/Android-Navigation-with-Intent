@@ -66,6 +66,7 @@
             </LinearLayout>
             <Button
                 android:text="Relative Layout"
+                android:onClick="RelativeLayoutBtnClicked"
                 android:id="@+id/RelativeLayoutBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -93,7 +94,7 @@
                     android:text="Constraint Layout needs at least ONE horizontal and ONE vertical constraints to define the views within it."/>
             </LinearLayout>
             <Button
-
+                android:onClick="ConstraintLayoutBtnClicked"
                 android:text="Constraint Layout"
                 android:id="@+id/ConstraintLayoutBtn"
                 android:layout_width="match_parent"
@@ -122,6 +123,7 @@
                     android:text="Grid Layout arranges the views in distributed rows and columns manner"/>
             </LinearLayout>
             <Button
+                android:onClick="GridLayoutBtnClicked"
                 android:text="Grid Layout"
                 android:id="@+id/GridLayoutBtn"
                 android:layout_width="match_parent"
