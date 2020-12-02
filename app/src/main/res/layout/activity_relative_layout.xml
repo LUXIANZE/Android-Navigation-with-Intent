@@ -63,6 +63,7 @@
         </LinearLayout>
 
         <Button
+            android:layout_margin="10dp"
             android:layout_below="@id/inputContainer"
             android:onClick="backToHomeBtnClicked"
             android:id="@+id/backToHomeBtn"

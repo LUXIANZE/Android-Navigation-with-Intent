@@ -25,10 +25,12 @@ public class RelativeLayout extends AppCompatActivity {
 
     private void setResult(){
         String name = input.getText().toString();
-        Intent intent = new Intent();
-        intent.putExtra("userName", name);
-        setResult(RESULT_OK, intent);
-        finish();
+        if (!name.isEmpty()){
+            Intent intent = new Intent();
+            intent.putExtra("userName", name);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
     }
 
     public void backToHomeBtnClicked(View view) {
