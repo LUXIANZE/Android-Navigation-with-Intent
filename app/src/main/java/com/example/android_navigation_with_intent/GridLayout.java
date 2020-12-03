@@ -12,9 +12,8 @@ import android.widget.Toast;
 public class GridLayout extends AppCompatActivity {
 
     private String expression = "";
-    private Button Btn0, Btn1, Btn2, Btn3, Btn4, Btn5, Btn6, Btn7, Btn8, Btn9, BtnPlus, BtnSubtract, BtnMultiply, BtnDivide, BtnEqual, BtnDecimal;
     TextView textView;
-    private View.OnClickListener buttonListener = new View.OnClickListener() {
+    private final View.OnClickListener buttonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Button btn = (Button) v;
@@ -37,27 +36,26 @@ public class GridLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_layout);
 
-        Btn0 = (Button) findViewById(R.id.Btn0);
-        Btn1 = (Button) findViewById(R.id.Btn1);
-        Btn2 = (Button) findViewById(R.id.Btn2);
-        Btn3 = (Button) findViewById(R.id.Btn3);
-        Btn4 = (Button) findViewById(R.id.Btn4);
-        Btn5 = (Button) findViewById(R.id.Btn5);
-        Btn6 = (Button) findViewById(R.id.Btn6);
-        Btn7 = (Button) findViewById(R.id.Btn7);
-        Btn8 = (Button) findViewById(R.id.Btn8);
-        Btn9 = (Button) findViewById(R.id.Btn9);
+        Button btn0 = findViewById(R.id.Btn0);
+        Button Btn1 = findViewById(R.id.Btn1);
+        Button Btn2 = findViewById(R.id.Btn2);
+        Button Btn3 = findViewById(R.id.Btn3);
+        Button Btn4 = findViewById(R.id.Btn4);
+        Button Btn5 = findViewById(R.id.Btn5);
+        Button Btn6 = findViewById(R.id.Btn6);
+        Button Btn7 = findViewById(R.id.Btn7);
+        Button Btn8 = findViewById(R.id.Btn8);
+        Button Btn9 = findViewById(R.id.Btn9);
 
-        BtnPlus     = (Button) findViewById(R.id.BtnPlus);
-        BtnSubtract = (Button) findViewById(R.id.BtnSubtract);
-        BtnMultiply = (Button) findViewById(R.id.BtnMultiply);
-        BtnDivide   = (Button) findViewById(R.id.BtnDivide);
-        BtnEqual    = (Button) findViewById(R.id.BtnEqual);
-        BtnDecimal  = (Button) findViewById(R.id.BtnDecimal);
+        Button BtnPlus     = findViewById(R.id.BtnPlus);
+        Button BtnSubtract = findViewById(R.id.BtnSubtract);
+        Button BtnMultiply = findViewById(R.id.BtnMultiply);
+        Button BtnDivide   = findViewById(R.id.BtnDivide);
+        Button BtnDecimal  = findViewById(R.id.BtnDecimal);
 
-        textView = (TextView)findViewById(R.id.textView1);
+        textView = findViewById(R.id.textView1);
 
-        Btn0.setOnClickListener(buttonListener);
+        btn0.setOnClickListener(buttonListener);
         Btn1.setOnClickListener(buttonListener);
         Btn2.setOnClickListener(buttonListener);
         Btn3.setOnClickListener(buttonListener);
@@ -157,11 +155,22 @@ public class GridLayout extends AppCompatActivity {
                     while (ch >= 'a' && ch <= 'z') nextChar();
                     String func = str.substring(startPos, this.pos);
                     x = parseFactor();
-                    if (func.equals("sqrt")) x = Math.sqrt(x);
-                    else if (func.equals("sin")) x = Math.sin(Math.toRadians(x));
-                    else if (func.equals("cos")) x = Math.cos(Math.toRadians(x));
-                    else if (func.equals("tan")) x = Math.tan(Math.toRadians(x));
-                    else throw new RuntimeException("Unknown function: " + func);
+                    switch (func) {
+                        case "sqrt":
+                            x = Math.sqrt(x);
+                            break;
+                        case "sin":
+                            x = Math.sin(Math.toRadians(x));
+                            break;
+                        case "cos":
+                            x = Math.cos(Math.toRadians(x));
+                            break;
+                        case "tan":
+                            x = Math.tan(Math.toRadians(x));
+                            break;
+                        default:
+                            throw new RuntimeException("Unknown function: " + func);
+                    }
                 } else {
                     throw new RuntimeException("Unexpected: " + (char)ch);
                 }
