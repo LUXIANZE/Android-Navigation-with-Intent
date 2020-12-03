@@ -6,4 +6,163 @@
     android:layout_height="match_parent"
     tools:context=".GridLayout">
 
+    <TextView
+        android:layout_marginHorizontal="50dp"
+        android:paddingHorizontal="5dp"
+        android:background="@drawable/text_backgroud"
+        android:id="@+id/textView1"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textAlignment="textEnd"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="152dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="end" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView1"
+        app:layout_constraintVertical_bias="0.142">
+
+        <Button
+            android:onClick="clearBtnClicked"
+            android:text="clear"
+            android:layout_columnSpan="4"
+            android:layout_columnWeight="4"/>
+        <Button
+            android:id="@+id/Btn7"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/Btn8"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/Btn9"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/BtnMultiply"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="X" />
+
+        <Button
+            android:id="@+id/Btn4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/Btn5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/Btn6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/BtnSubtract"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/Btn1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/Btn2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/Btn3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/BtnPlus"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/Btn0"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/BtnDecimal"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="." />
+
+        <Button
+            android:onClick="EqualBtnClicked"
+            android:id="@+id/BtnEqual"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="=" />
+
+        <Button
+            android:id="@+id/BtnDivide"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="7dp"
+            android:text="÷" />
+    </GridLayout>
+
+    <Button
+        android:onClick="backToHomeBtnClicked"
+        android:text="Back To Home"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
